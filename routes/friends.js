@@ -36,7 +36,9 @@ router.get('/:userA', async function(req, res, next) {
         responseObj.push(friend.userA.username == user.username ? 
                             friend.userB.username : friend.userA.username);
       });
-      res.status(200).send(responseObj);
+      res.status(200).send({
+        friends:responseObj
+      });
     }
   }
 

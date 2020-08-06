@@ -86,7 +86,9 @@ router.get('/:userA', async function (req, res, next) {
       pendingRequest.forEach((request) => {
         responseObj.push(request.from.username);
       });
-      res.status(200).send(responseObj);
+      res.status(200).send({
+        friend_requests : responseObj
+      });
     }
   }
 });
